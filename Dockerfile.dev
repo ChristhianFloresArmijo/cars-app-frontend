@@ -1,0 +1,35 @@
+FROM cypress/base:18.14.1
+
+ARG user=frontend
+ARG gid=1000
+ARG uid=1000
+
+# Install Chrome
+RUN apt-get update && apt-get install -y wget gnupg2 ca-certificates && \
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get update && apt-get install -y google-chrome-stable
+
+RUN deluser --remove-home node
+
+RUN addgroup --gid $gid ${user}
+RUN adduser --disabled-password --gecos '' --uid $uid --gid $gid ${user}
+# RUN addgroup --system --gid $gid ${user}
+# RUN adduser --system --uid $uid ${user}
+
+USER ${user}
+
+WORKDIR /home/${user}/${user}  
+
+COPY --chown=${user}:${user} . .
+
+# RUN yarn install && yarn cache clean --all
+# RUN yarn cypress verify
+
+
+ENTRYPOINT ./setup.sh
+# USER root
+
+# RUN chown -R ${user}:${user} node_modules
+
+# USER ${user}

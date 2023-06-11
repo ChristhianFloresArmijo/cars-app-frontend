@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/home/frontend/frontend
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+
+  # cypress:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile.cypress
+  #   depends_on:
+  #     - frontend
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     - CYPRESS_baseUrl=http://frontend:3000
