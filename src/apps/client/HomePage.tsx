@@ -1,3 +1,4 @@
+import HeroHome from '@/components/ HeroHome'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
@@ -6,5 +7,9 @@ const PageContainer = styled.div`
 `
 
 export default function HomePage() {
-  return <PageContainer>Hello World!</PageContainer>
+  return (
+    <PageContainer>
+      <HeroHome></HeroHome>
+    </PageContainer>
+  )
 }

@@ -9,8 +9,8 @@ start: ## Start the development docker container.
 stop: ## Stop the development docker container.
 	docker compose -f docker-compose.dev.yml down 
 
-.PHONY: run dev
-run dev: ## Start dev server
+.PHONY: dev
+dev: ## Start dev server
 	docker compose -f docker-compose.dev.yml exec frontend yarn run dev
 
 .PHONY: test
