@@ -5,7 +5,7 @@ import NavItems from './NavItems'
 
 const NavbarContainer = styled.div`
   min-height: 68px;
-  ${tw`w-full max-w-screen-2xl flex flex-row items-center lg:px-12 justify-between`}
+  ${tw`w-full max-w-screen-2xl flex flex-row items-center lg:px-12 justify-between bg-transparent fixed z-20`}
 `
 
 const LogoContainer = styled.div``

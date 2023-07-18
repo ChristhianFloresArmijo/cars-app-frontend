@@ -10,6 +10,12 @@ export default defineConfig({
     port: 3000,
   },
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: 'tailwind.config.cjs', replacement: path.resolve(__dirname, 'tailwind.config.cjs') },
+    ],
+  },
+  optimizeDeps: {
+    include: ['tailwind.config.cjs'],
   },
 })

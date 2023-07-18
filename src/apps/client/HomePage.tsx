@@ -1,4 +1,5 @@
 import HeroHome from '@/components/ HeroHome'
+import BookCard from '@/components/BookCard'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <PageContainer>
       <HeroHome></HeroHome>
+      <BookCard></BookCard>
     </PageContainer>
   )
 }

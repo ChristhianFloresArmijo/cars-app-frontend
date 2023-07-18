@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 import { slide as Menu } from 'react-burger-menu'
 import { useMediaQuery } from 'react-responsive'
-import { SCREENS } from '@/utils/screens'
+import { breakpoints } from '@/hooks/breakpoints'
 
 const ListContainer = styled.ul`
   ${tw`flex list-none`}
@@ -24,7 +24,7 @@ const NavItem = styled.li<{ menu?: any }>`
 `
 
 export default function NavItems() {
-  const isMobile = useMediaQuery({ maxWidth: SCREENS.sm })
+  const isMobile = useMediaQuery({ maxWidth: breakpoints.sm })
   const navMenu = (sideMenu: boolean) => (
     <ListContainer>
       <NavItem menu={sideMenu}>

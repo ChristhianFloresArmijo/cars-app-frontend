@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 import MclarenCarImg from '@/assets/images/mclaren-orange-big.png'
 import BlobImg from '@/assets/images/blob.svg'
+import { breakpoints } from '@/hooks/breakpoints'
+import Button from './Button'
 
 const HeroContainer = styled.div`
   min-height: 400px;
@@ -43,6 +45,30 @@ const BlobContainer = styled.div`
     height: auto;
     max-height: max-content;
   }
+
+  @media only screen and (min-width: ${breakpoints.sm}) {
+    width: 40em;
+    max-height: 10em;
+    right: -9em;
+    top: -16em;
+    transform: rotate(-25deg);
+  }
+
+  @media only screen and (min-width: ${breakpoints.lg}) {
+    width: 50em;
+    max-height: 30em;
+    right: -7em;
+    top: -15em;
+    transform: rotate(-30 deg);
+  }
+
+  @media only screen and (min-width: ${breakpoints.xl}) {
+    width: 70em;
+    max-height: 10em;
+    right: -9em;
+    top: -20em;
+    transform: rotate(-20deg);
+  }
 `
 
 const StandaloneCar = styled.div`
@@ -57,6 +83,28 @@ const StandaloneCar = styled.div`
     height: 100%;
     max-width: fit-content;
   }
+
+  @media only screen and (min-width: ${breakpoints.sm}) {
+    height: 16em;
+    right: -6em;
+    top: -6em;
+  }
+
+  @media only screen and (min-width: ${breakpoints.lg}) {
+    height: 21em;
+    right: -8em;
+    top: -5em;
+  }
+
+  @media only screen and (min-width: ${breakpoints.xl}) {
+    height: 30em;
+    right: -13em;
+    top: -9em;
+  }
+`
+
+const ButtonsContainer = styled.div`
+  ${tw`flex mt-5 flex-wrap`}
 `
 
 export default function HeroHome() {
@@ -68,13 +116,17 @@ export default function HeroHome() {
           Always choose the best car from out local stores or order it remotely at the best price
           for you and get the best quality cars as long as you like.
         </Description>
+        <ButtonsContainer>
+          <Button text="Book Your Ride" theme="filled"></Button>
+          <Button text="Sell Your Car"></Button>
+        </ButtonsContainer>
       </LeftContainer>
       <RightContainer>
         <BlobContainer>
-          <img alt="" src={MclarenCarImg} />
+          <img alt="" src={BlobImg} />
         </BlobContainer>
         <StandaloneCar>
-          <img alt="" src={BlobImg} />
+          <img alt="" src={MclarenCarImg} />
         </StandaloneCar>
       </RightContainer>
     </HeroContainer>
