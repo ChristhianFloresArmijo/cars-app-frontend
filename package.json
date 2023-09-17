@@ -32,7 +32,6 @@
     "react-use": "^17.4.0",
     "redux": "^4.2.1",
     "sass": "^1.60.0",
-    "sort-by": "^1.2.0",
     "styled-components": "^5.3.11",
     "twin.macro": "^3.3.1"
   },
