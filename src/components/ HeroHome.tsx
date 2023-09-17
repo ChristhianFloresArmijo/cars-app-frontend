@@ -66,7 +66,7 @@ const BlobContainer = styled.div`
     width: 70em;
     max-height: 10em;
     right: -9em;
-    top: -20em;
+    top: -25em;
     transform: rotate(-20deg);
   }
 `

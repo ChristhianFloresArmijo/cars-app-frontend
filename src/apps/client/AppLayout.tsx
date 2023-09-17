@@ -10,7 +10,7 @@ const AppContainer = styled.div`
 export default function AppLayout() {
   return (
     <AppContainer>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Outlet />
     </AppContainer>
   )
